@@ -27,7 +27,7 @@ THE SOFTWARE.
  */
 
 (function ($){
-    //"use strict";
+    "use strict";
     var pluginName = "heatmap", pluginVersion = "0.3";
     var options ={
         series:{
@@ -83,7 +83,6 @@ THE SOFTWARE.
             ctx.fillStyle = grad;
             ctx.fillRect(0,0,1,256);
             opt.series.heatmap.gradient = ctx.getImageData(0,0,1,256).data;          
-            delete canvas; delete grad; delete ctx;
         }    
         function processRawData(plot,s,data,datapoints){
             if(s.heatmap.show === true){
