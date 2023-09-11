@@ -82,7 +82,7 @@ THE SOFTWARE.
                 if(opt.series.grow.stepDelay === 0){ opt.series.grow.stepDelay++;}
                 growingLoop();
                 if (isPluginRegistered("resize")) {
-                    plot.getPlaceholder().bind("resize", onResize);
+                    plot.getPlaceholder().on("resize", onResize);
                 }
             }
         }
@@ -153,7 +153,7 @@ THE SOFTWARE.
             if (growfunc) { window.clearTimeout(growfunc); growfunc = null; }
         }
         function shutdown(plot, eventHolder) {
-            plot.getPlaceholder().unbind("resize", onResize);
+            plot.getPlaceholder().off("resize", onResize);
         }
         function isPluginRegistered(pluginName) {
             var plugins = $.plot.plugins;

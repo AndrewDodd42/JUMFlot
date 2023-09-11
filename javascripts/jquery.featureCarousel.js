@@ -60,7 +60,7 @@
         $imageElements.each(function (index, element) {
           // Attempt to load the images
 var img = new Image();
-          $(img).bind('load error', function () {
+          $(img).on('load error', function () {
             // Add to number of images loaded and see if they are all done yet
             loadedImages++;
             if (loadedImages == totalImages) {
@@ -575,7 +575,7 @@ img.src = element.src;
 
     // These are the click and hover events for the features
     pluginData.featuresContainer.find(".carousel-feature")
-      .click(function () {
+      .on('click', function () {
         var position = $(this).data('position');
         if (position == 2) {
           initiateMove(true,1);
@@ -583,7 +583,7 @@ img.src = element.src;
           initiateMove(false,1);
         }
       })
-      .mouseover(function () {
+      .on('mouseover', function () {
         if (pluginData.currentlyMoving == false) {
           var position = $(this).data('position');
           if (position == 2 || position == pluginData.totalFeatureCount) {
@@ -595,7 +595,7 @@ img.src = element.src;
         // stop the rotation?
         if (options.stopOnHover) options.autoPlay = 0;
       })
-      .mouseout(function () {
+      .on('mouseout', function () {
         if (pluginData.currentlyMoving == false) {
           var position = $(this).data('position');
           if (position == 2 || position == pluginData.totalFeatureCount) {

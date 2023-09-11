@@ -50,10 +50,10 @@ THE SOFTWARE.
             plotOffset = plot.getPlotOffset();
             placeHolder = plot.getPlaceholder();
             if (opt.grid.editable || opt.grid.clickable || opt.grid.hoverable) {
-                evtHolder.mousedown(onMouseDown);
-                evtHolder.mouseup(onMouseUp);
-                evtHolder.mousemove(onMouseMove);
-                evtHolder.click(onMouseClick);
+                evtHolder.on('mousedown', onMouseDown);
+                evtHolder.on('mouseup', onMouseUp);
+                evtHolder.on('mousemove', onMouseMove);
+                evtHolder.on('click', onMouseClick);
             }
         }
         function onMouseClick(e){
