@@ -123,7 +123,7 @@
 				this.geocode({address: opts.address, center: true});
 //			else if (opts.latitude != $.goMapBase.defaults.latitude && opts.longitude != $.goMapBase.defaults.longitude)
 //				this.centerLatLng = new google.maps.LatLng(opts.latitude, opts.longitude);
-			else if ($.isArray(opts.markers) && opts.markers.length > 0) {
+			else if (Array.isArray(opts.markers) && opts.markers.length > 0) {
 				if (opts.markers[0].address)
 					this.geocode({address: opts.markers[0].address, center: true});
 				else
@@ -412,7 +412,7 @@
 					}
 	
 				}
-				else if (type && type == 'markers' && $.isArray(markers)) {
+				else if (type && type == 'markers' && Array.isArray(markers)) {
 					for (var i = 0, l = markers.length; i < l; i++) {
 						this.bounds.extend($(this.mapId).data(markers[i]).position);
 					}

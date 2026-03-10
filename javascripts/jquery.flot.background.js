@@ -57,7 +57,7 @@ THE SOFTWARE.
             lctx = ctx;
             var zIndex = opt.grid.background.setZIndex;
             background = new Canvas("flot-background", plot.getPlaceholder());
-            if($.isNumeric(zIndex) === true){
+            if(Number.isFinite(zIndex) === true){
                     $(plot.getPlaceholder().children(".flot-overlay")).css('z-index',zIndex + 1);
                     $(plot.getCanvas()).css('z-index',zIndex);
                     $(background.element).css('z-index',zIndex - 1);                                

@@ -107,7 +107,7 @@ THE SOFTWARE.
                 for(var i in obj){
                     if(typeof obj[i] === "object"){ 
                         if(i !== "image"){
-                            if($.isNumeric(i)){ msg += '\n,"' + i + '":'; }
+                            if(Number.isFinite(i)){ msg += '\n,"' + i + '":'; }
                             else{msg += '\n,' + i + ':'; }
                             msg += docuSubtree(obj[i],takedef);
                             msg +='}';
@@ -178,7 +178,7 @@ THE SOFTWARE.
         if(typeof obj === "object") {
             for(var i in obj){
                 if(typeof obj[i] === "object"){
-                    if($.isNumeric(i)){ msg += '<b>[' + i + ']</b>';} else {msg += '<li><b>' + i + '</b>'; }
+                    if(Number.isFinite(i)){ msg += '<b>[' + i + ']</b>';} else {msg += '<li><b>' + i + '</b>'; }
                     if(obj[i].docu) { msg += '&nbsp;<dfn>' + obj[i].docu + '</dfn>'; }
                     if(obj[i].defVal) { if(obj[i].defVal !== "none") {msg += '&nbsp;(<code>' + obj[i].defVal + '</code>)'; } }
                     msg += '</li>\n';
@@ -229,7 +229,7 @@ THE SOFTWARE.
         function getTypeOf(x){
             var r;
             r = typeof x;
-            if($.isArray(x)){ r += " Array"; }
+            if(Array.isArray(x)){ r += " Array"; }
             return r;
         }
     }
