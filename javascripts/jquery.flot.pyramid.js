@@ -87,7 +87,7 @@ THE SOFTWARE.
             lowWidth = serie.data[j].value * ctx.canvas.width / dataMax;
             lowY = ctx.canvas.height - (dataHeight * j);
             if((j+1)==serie.data.length){ highWidth = 0;} else{ highWidth = serie.data[j+1].value * ctx.canvas.width / dataMax;}
-            if ($.isFunction(serie.pyramids.mode)) {
+            if (typeof serie.pyramids.mode === "function") {
                 serie.pyramids.mode(ctx,serie,centerX, lowY, lowWidth, dataHeight, highWidth, c);
             }
             else {
